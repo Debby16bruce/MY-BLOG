@@ -1,11 +1,41 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My Flask Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY-BLOG | Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Welcome to My Flask Blog!</h1>
-    <p>This is the homepage.</p>
+
+    <header>
+        <h1>Welcome to MY-BLOG</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/new">Create Post</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="posts">
+            {% for post in posts %}
+                <article class="post">
+                    <h2>{{ post.title }}</h2>
+                    <p>{{ post.content[:150] }}...</p>
+                    <a href="/post/{{ post.id }}">Read More</a>
+                </article>
+            {% endfor %}
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 MY-BLOG. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>
