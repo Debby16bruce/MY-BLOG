@@ -9,6 +9,3 @@ MY-BLOG is a Flask-based blog application where users can create, edit, and dele
 - 🎨 Responsive UI using Flask & CSS  
 - 🗄️ Database storage for posts  
 
-## Installation & Setup  
-Follow these steps to run the project on your local machine:  
-
